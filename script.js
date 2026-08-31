@@ -827,14 +827,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('paypal-button-container-wizard').innerHTML = '<p class="paypal-placeholder" data-i18n="index_p_3">' + (window.t ? window.t("index_p_3") : 'PayPal integration ready') + '</p>';
             paypal.Buttons({
                 createOrder: function(data, actions) {
-                    const emailInput = document.getElementById('customer-email');
-                    if (!emailInput.value || !emailInput.value.includes('@')) {
-                        document.getElementById('email-error').style.display = 'block';
-                        alert(window.t ? window.t("error_email_required") : "Email required");
-                        throw new Error("Invalid email");
-                    }
-                    document.getElementById('email-error').style.display = 'none';
-                    
+
                     if (cartItems.length === 0) {
                         alert(window.t ? window.t("error_cart_empty") : "Cart empty");
                         throw new Error("Empty cart");
