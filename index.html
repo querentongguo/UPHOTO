@@ -272,6 +272,14 @@
 <div class="wizard-step active" id="step-1">
 <h2 data-i18n="wiz_title1">Upload Your Photo</h2>
 <p class="modal-subtitle" data-i18n="wiz_desc1">Digital Delivery Only. Please review our guidelines for the best restoration results.</p>
+<div class="step-1-layout">
+<div class="upload-area" id="drop-zone">
+<div class="upload-icon" data-i18n="index_div_32">☁️</div>
+<p data-i18n="upload_drag">Drag &amp; Drop your photo here</p>
+<span data-i18n="upload_or">or</span><br/>
+<button class="cta-button" data-i18n="upload_browse" id="browse-btn">Browse Files</button>
+<input accept="image/*" hidden="" id="file-input" type="file"/>
+</div>
 <div class="guidelines-grid">
 <div class="guideline-card good">
 <div class="guideline-icon" data-i18n="index_div_31">✔️</div>
@@ -293,12 +301,6 @@
 </ul>
 </div>
 </div>
-<div class="upload-area" id="drop-zone">
-<div class="upload-icon" data-i18n="index_div_32">☁️</div>
-<p data-i18n="upload_drag">Drag &amp; Drop your photo here</p>
-<span data-i18n="upload_or">or</span><br/>
-<button class="cta-button" data-i18n="upload_browse" id="browse-btn">Browse Files</button>
-<input accept="image/*" hidden="" id="file-input" type="file"/>
 </div>
 </div>
 <div class="wizard-step" id="step-2">

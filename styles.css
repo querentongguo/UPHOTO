@@ -1668,3 +1668,62 @@ footer {
     cursor: pointer;
     font-weight: 600;
 }
+
+/* Wizard UI Improvements */
+.step-1-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .step-1-layout {
+        grid-template-columns: 1fr;
+    }
+}
+.wizard-container {
+    max-width: 900px; /* Make it slightly wider */
+    padding: 1.5rem 2rem; /* Reduce top/bottom padding slightly */
+}
+.guidelines-grid {
+    grid-template-columns: 1fr; /* Stack good/bad vertically on desktop when side-by-side */
+    gap: 1rem;
+    margin: 0;
+}
+.guideline-card {
+    padding: 1rem;
+}
+.guideline-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.guideline-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+.guideline-card ul li {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Step 2 improvements */
+.cropper-wrapper {
+    height: 40vh; /* Reduced from 50vh or default to prevent scrolling */
+    min-height: 250px;
+}
+.preview-container {
+    height: 100%;
+}
+.cropper-toolbar {
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+/* Step 4 improvements */
+.email-capture-section {
+    margin-bottom: 1rem;
+}
+.order-summary {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}

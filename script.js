@@ -520,6 +520,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 cartItems[currentEditIndex].notes = document.getElementById('user-notes').value;
             }
             renderCart();
+        } else if (currentStep === 4) {
+            renderPayPal();
         }
     }
 
@@ -818,54 +820,66 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // PayPal Integration with Backend
-    if (typeof paypal !== 'undefined') {
-        paypal.Buttons({
-            createOrder: function(data, actions) {
-                const emailInput = document.getElementById('customer-email');
-                if (!emailInput.value || !emailInput.value.includes('@')) {
-                    document.getElementById('email-error').style.display = 'block';
-                    alert(window.t ? window.t("error_email_required") : "Email required");
-                    throw new Error("Invalid email");
-                }
-                document.getElementById('email-error').style.display = 'none';
-                
-                if (cartItems.length === 0) {
-                    alert(window.t ? window.t("error_cart_empty") : "Cart empty");
-                    throw new Error("Empty cart");
-                }
-
-                let subtotalUSD = 0;
-                cartItems.forEach(item => { subtotalUSD += getBasePrice(item.tier); });
-                let discountPercent = 0;
-                if (cartItems.length === 2) discountPercent = 0.20;
-                else if (cartItems.length === 3) discountPercent = 0.40;
-                else if (cartItems.length >= 4) discountPercent = 0.50;
-                const finalTotalUSD = subtotalUSD - (subtotalUSD * discountPercent);
-
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: finalTotalUSD.toFixed(2)
-                        },
-                        description: `UPHOTO Restoration Service (${cartItems.length} photos)`
-                    }]
-                });
-            },
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    const transactionId = details.id;
+    
+    let paypalRendered = false;
+    function renderPayPal() {
+        if (typeof paypal !== 'undefined' && !paypalRendered) {
+            document.getElementById('paypal-button-container-wizard').innerHTML = '<p class="paypal-placeholder" data-i18n="index_p_3">' + (window.t ? window.t("index_p_3") : 'PayPal integration ready') + '</p>';
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    const emailInput = document.getElementById('customer-email');
+                    if (!emailInput.value || !emailInput.value.includes('@')) {
+                        document.getElementById('email-error').style.display = 'block';
+                        alert(window.t ? window.t("error_email_required") : "Email required");
+                        throw new Error("Invalid email");
+                    }
+                    document.getElementById('email-error').style.display = 'none';
                     
-                    document.getElementById('upload-wizard').style.display = 'none';
-                    cartItems = [];
-                    renderCart();
-                    
-                    alert(`✅ Payment Successful!\n\nYour Transaction ID is: ${transactionId}\n\nSince this is a secure checkout, please EMAIL your photos to orders@uphoto-studio.com and include your Transaction ID in the email subject.\n\nWe will begin restoration immediately upon receiving your email.`);
-                });
-            },
-            onError: function(err) {
-                console.error("PayPal Error:", err);
-            }
-        }).render('#paypal-button-container-wizard');
+                    if (cartItems.length === 0) {
+                        alert(window.t ? window.t("error_cart_empty") : "Cart empty");
+                        throw new Error("Empty cart");
+                    }
+
+                    let subtotalUSD = 0;
+                    cartItems.forEach(item => { subtotalUSD += getBasePrice(item.tier); });
+                    let discountPercent = 0;
+                    if (cartItems.length === 2) discountPercent = 0.20;
+                    else if (cartItems.length === 3) discountPercent = 0.40;
+                    else if (cartItems.length >= 4) discountPercent = 0.50;
+                    const finalTotalUSD = subtotalUSD - (subtotalUSD * discountPercent);
+
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: finalTotalUSD.toFixed(2)
+                            },
+                            description: `UPHOTO Restoration Service (${cartItems.length} photos)`
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        const transactionId = details.id;
+                        
+                        document.getElementById('upload-wizard').style.display = 'none';
+                        cartItems = [];
+                        renderCart();
+                        
+                        alert(`✅ Payment Successful!
+
+Your Transaction ID is: ${transactionId}
+
+Since this is a secure checkout, please EMAIL your photos to orders@uphoto-studio.com and include your Transaction ID in the email subject.
+
+We will begin restoration immediately upon receiving your email.`);
+                    });
+                },
+                onError: function(err) {
+                    console.error("PayPal Error:", err);
+                }
+            }).render('#paypal-button-container-wizard');
+            paypalRendered = true;
+        }
     }
+
 });
