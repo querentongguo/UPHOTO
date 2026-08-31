@@ -1199,10 +1199,45 @@ function setLanguage(lang) {
     window.dispatchEvent(new Event('languageChanged'));
 }
 
-// Initialize language from localStorage or default to zh-CN
+// Initialize language from localStorage or auto-detect from browser
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('uphoto_lang') || 'zh-CN';
-    setLanguage(savedLang);
+    let targetLang = localStorage.getItem('uphoto_lang');
+    
+    // Auto-detect browser language if not set manually
+    if (!targetLang) {
+        const browserLang = navigator.language || navigator.userLanguage; // e.g. "en-US", "zh-CN"
+        
+        // Map browser language to our supported languages
+        if (browserLang.startsWith('zh')) {
+            if (browserLang.includes('TW') || browserLang.includes('HK') || browserLang.includes('MO') || browserLang.includes('Hant')) {
+                targetLang = 'zh-TW';
+            } else {
+                targetLang = 'zh-CN';
+            }
+        } else if (browserLang.startsWith('es')) {
+            targetLang = 'es';
+        } else if (browserLang.startsWith('ja')) {
+            targetLang = 'ja';
+        } else if (browserLang.startsWith('de')) {
+            targetLang = 'de';
+        } else if (browserLang.startsWith('fr')) {
+            targetLang = 'fr';
+        } else if (browserLang.startsWith('ko')) {
+            targetLang = 'ko';
+        } else if (browserLang.startsWith('ru')) {
+            targetLang = 'ru';
+        } else {
+            // Default to English for all other countries/languages
+            targetLang = 'en';
+        }
+        
+        // Ensure the language exists in our translations, fallback to 'en'
+        if (!window.translations[targetLang]) {
+            targetLang = 'en';
+        }
+    }
+
+    setLanguage(targetLang);
 
     const langSwitcher = document.getElementById('lang-switcher');
     if (langSwitcher) {
