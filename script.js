@@ -515,10 +515,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentStep === 2) {
             renderThumbnailsBar();
         } else if (currentStep === 3) {
-            if(cropper && currentEditIndex >= 0) {
-                // Save cropped state before leaving step 2
-                cartItems[currentEditIndex].notes = document.getElementById('user-notes').value;
-            }
+            
             renderCart();
         } else if (currentStep === 4) {
             renderPayPal();
