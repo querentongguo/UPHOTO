@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-i18n="title">UPHOTO | Premium Old Photo Restoration</title>
+<meta content="Professional old photo restoration and colorization service. Bring your cherished memories back to life with UPHOTO." name="description"/>
+<!-- OpenGraph SEO Tags -->
+<meta content="UPHOTO | Premium Old Photo Restoration" property="og:title"/>
+<meta content="Professional old photo restoration and colorization service. Bring your cherished memories back to life with UPHOTO." property="og:description"/>
+<meta content="http://127.0.0.1:4242/assets/nuochao1025.webp" property="og:image"/>
+<meta content="http://127.0.0.1:4242/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet"/>
+<link href="styles.css?v=12" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js?v=3"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=sb¤cy=USD"></script>
+</head>
+<body>
+<header class="navbar">
+<div class="navbar-container">
+<a class="logo" data-i18n="index_a_13" href="#" style="text-decoration: none;">
+<div class="logo-image-container">
+<img alt="UPHOTO Logo" class="logo-image" loading="lazy" src="assets/nuochao1025.webp"/>
+</div>
+<span class="logo-text" data-i18n="index_span_4">UPHOTO</span>
+</a>
+<nav class="nav-links">
+<a data-i18n="nav_story" href="#story">Our Story</a>
+<a data-i18n="nav_pricing" href="#pricing">Pricing</a>
+<a data-i18n="nav_reviews" href="#reviews">Client Stories</a>
+<a data-i18n="nav_support" href="#support-section">Support &amp; FAQ</a>
+</nav>
+<div class="nav-actions">
+<select class="lang-switcher" id="lang-switcher">
+<option value="en">English</option>
+<option value="zh-CN">简体中文</option>
+<option value="zh-TW">繁體中文</option>
+<option value="de">Deutsch</option>
+<option value="fr">Français</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+<option value="ru">Русский</option>
+</select>
+</div>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="hero-content">
+<h1 class="fade-up" data-i18n="hero_title">Restore Your History. Preserve Your Legacy.</h1>
+<p class="fade-up delay-1" data-i18n="hero_subtitle">Premium old photo restoration and colorization, bringing cherished memories back to life with expert care.</p>
+<div class="slider-container fade-up delay-2" id="hero-slider">
+<div class="slider-image slider-image-before">
+<img alt="Damaged Old Photo" class="main-before" loading="lazy" src="assets/before_1.webp"/>
+</div>
+<div class="slider-image slider-image-after">
+<img alt="Restored Photo" class="main-after" loading="lazy" src="assets/after_1.webp"/>
+</div>
+<div class="slider-handle">
+<span class="slider-handle-icon">⟷</span>
+</div>
+<p class="slider-caption floating-caption" data-i18n="hero_drag">Experience the Transformation (Drag to See)</p>
+</div>
+<div class="gallery-thumbnails fade-up delay-2" data-target="#hero-slider">
+<!-- Original Images -->
+<div class="thumbnail active" data-after="assets/after_1.webp" data-before="assets/before_1.webp" style="background-image: url('assets/after_1.webp')"></div>
+<div class="thumbnail" data-after="assets/after_2.webp" data-before="assets/before_2.webp" style="background-image: url('assets/after_2.webp')"></div>
+<div class="thumbnail" data-after="assets/after_3.webp" data-before="assets/before_3.webp" style="background-image: url('assets/after_3.webp')"></div>
+<div class="thumbnail" data-after="assets/after_4.webp" data-before="assets/before_4.webp" style="background-image: url('assets/after_4.webp')"></div>
+<div class="thumbnail" data-after="assets/after_5.webp" data-before="assets/before_5.webp" style="background-image: url('assets/after_5.webp')"></div>
+<div class="thumbnail" data-after="assets/after_6.webp" data-before="assets/before_6.webp" style="background-image: url('assets/after_6.webp')"></div>
+<div class="thumbnail" data-after="assets/after_7.webp" data-before="assets/before_7.webp" style="background-image: url('assets/after_7.webp')"></div>
+<div class="thumbnail" data-after="assets/after_8.webp" data-before="assets/before_8.webp" style="background-image: url('assets/after_8.webp')"></div>
+<div class="thumbnail" data-after="assets/after_10.webp" data-before="assets/before_10.webp" style="background-image: url('assets/after_10.webp')"></div>
+<!-- New AI Images -->
+<div class="thumbnail" data-after="assets/after_family_1.webp" data-before="assets/before_family_1.webp" style="background-image: url('assets/after_family_1.webp')"></div>
+<div class="thumbnail" data-after="assets/after_model_1.webp" data-before="assets/before_model_1.webp" style="background-image: url('assets/after_model_1.webp')"></div>
+<div class="thumbnail" data-after="assets/after_portrait_1.webp" data-before="assets/before_portrait_1.webp" style="background-image: url('assets/after_portrait_1.webp')"></div>
+<div class="thumbnail" data-after="assets/after_family_2.webp" data-before="assets/before_family_2.webp" style="background-image: url('assets/after_family_2.webp')"></div>
+<!-- Temp Placeholder Images (until AI quota resets) -->
+</div>
+</div>
+</section>
+<section class="brand-story" id="story">
+<div class="story-content">
+<h2 class="section-title" data-i18n="story_title">Reverence for Memory</h2>
+<div class="story-text">
+<p data-i18n="story_p1">Every crease, every faded corner, and every scratch holds a piece of someone's heart. At UPHOTO, we believe that history is not just kept in grand museums, but in the dusty shoeboxes hidden under our beds.</p>
+<p data-i18n="story_p2">We don't just fix pixels; we salvage time. With a profound reverence for history, our artisans blend cutting-edge AI technology with meticulous human craftsmanship to ensure your family's legacy lives on for generations.</p>
+</div>
+</div>
+</section>
+<section class="pricing" id="pricing">
+<h2 class="section-title" data-i18n="pricing_title">Fixed-Price Restoration</h2>
+<p class="pricing-subtitle" data-i18n="pricing_subtitle">Select the level of damage that best matches your photo.</p>
+<div class="pricing-grid">
+<div class="pricing-card">
+<div class="pricing-card-images">
+<img alt="Light Damage Before" loading="lazy" src="assets/before_2.webp"/>
+<img alt="Light Damage After" loading="lazy" src="assets/after_2.webp"/>
+</div>
+<h3 data-i18n="pricing_light_title">Light Damage</h3>
+<div class="price" data-i18n="index_div_24"><span class="price-val" data-base-price="19" data-i18n="index_span_5">$19</span></div>
+<ul class="pricing-features">
+<li data-i18n="pricing_feat_color">Color Correction / B&amp;W to Color</li>
+<li data-i18n="pricing_feat_minor">Minor scratches &amp; dust removal</li>
+<li data-i18n="pricing_feat_face">Basic face enhancement</li>
+</ul>
+<button class="cta-button primary block" data-i18n="pricing_btn">Order Now</button>
+</div>
+<div class="pricing-card popular">
+<div class="popular-badge" data-i18n="pricing_popular">Most Popular</div>
+<div class="pricing-card-images">
+<img alt="Medium Damage Before" loading="lazy" src="assets/before_3.webp"/>
+<img alt="Medium Damage After" loading="lazy" src="assets/after_3.webp"/>
+</div>
+<h3 data-i18n="pricing_med_title">Medium Damage</h3>
+<div class="price" data-i18n="index_div_25"><span class="price-val" data-base-price="39" data-i18n="index_span_6">$39</span></div>
+<ul class="pricing-features">
+<li data-i18n="pricing_feat_all_light">Everything in Light Damage</li>
+<li data-i18n="pricing_feat_tears">Repair visible tears &amp; creases</li>
+<li data-i18n="pricing_feat_water">Water stain removal</li>
+</ul>
+<button class="cta-button primary block glow" data-i18n="pricing_btn">Order Now</button>
+</div>
+<div class="pricing-card">
+<div class="pricing-card-images">
+<img alt="Before Restoration" class="main-before" loading="lazy" src="assets/before_family_1.webp"/>
+<img alt="After Restoration" class="main-after" loading="lazy" src="assets/after_family_1.webp"/>
+</div>
+<h3 data-i18n="pricing_severe_title">Severe Damage</h3>
+<div class="price" data-i18n="index_div_26"><span class="price-val" data-base-price="79" data-i18n="index_span_7">$79</span></div>
+<ul class="pricing-features">
+<li data-i18n="pricing_feat_all_med">Everything in Medium Damage</li>
+<li data-i18n="pricing_feat_missing">Reconstruct missing pieces</li>
+<li data-i18n="pricing_feat_heavy">Heavy degradation repair</li>
+</ul>
+<button class="cta-button primary block" data-i18n="pricing_btn">Order Now</button>
+</div>
+</div>
+</section>
+<section class="testimonials-module" id="reviews">
+<h2 class="section-title" data-i18n="nav_reviews">Client Stories</h2>
+<div class="marquee-wrapper" id="marquee-latest">
+<div class="marquee-track" id="marquee-track-latest-1"></div>
+<div aria-hidden="true" class="marquee-track" id="marquee-track-latest-2"></div>
+</div>
+<div class="marquee-wrapper" id="marquee-historical" style="margin-top: 1.5rem;">
+<div class="marquee-track" id="marquee-track-history-1"></div>
+<div aria-hidden="true" class="marquee-track" id="marquee-track-history-2"></div>
+</div>
+</section>
+<section class="support-module" id="support-section">
+<h2 class="section-title" data-i18n="nav_support">Guidance &amp; Support</h2>
+<div class="support-container glass-panel">
+<!-- Left Column: Process Timeline -->
+<div class="process-column">
+<h3 data-i18n="process_title">How It Works</h3>
+<div class="vertical-timeline">
+<div class="v-step">
+<div class="v-step-indicator">1</div>
+<div class="v-step-content">
+<h4 data-i18n="process_step1_title">Upload</h4>
+<p data-i18n="process_step1_desc">Upload a scan or clear photo of your damaged original.</p>
+</div>
+</div>
+<div class="v-step">
+<div class="v-step-indicator">2</div>
+<div class="v-step-content">
+<h4 data-i18n="process_step2_title">Select &amp; Pay</h4>
+<p data-i18n="process_step2_desc">Choose the damage severity and complete the fixed-price payment.</p>
+</div>
+</div>
+<div class="v-step">
+<div class="v-step-indicator">3</div>
+<div class="v-step-content">
+<h4 data-i18n="process_step3_title">Expert Restoration</h4>
+<p data-i18n="process_step3_desc">Our artisans meticulously restore your photo pixel by pixel.</p>
+</div>
+</div>
+<div class="v-step">
+<div class="v-step-indicator">4</div>
+<div class="v-step-content">
+<h4 data-i18n="process_step4_title">Download</h4>
+<p data-i18n="process_step4_desc">Receive your high-resolution restored photo within 24-48 hours.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: FAQ Accordion -->
+<div class="faq-column">
+<h3 data-i18n="faq_title">Frequently Asked Questions</h3>
+<div class="accordion-list">
+<div class="accordion-item">
+<div class="accordion-header">
+<h4 data-i18n="faq_q1">How long does the restoration take?</h4>
+</div>
+<div class="accordion-body">
+<p data-i18n="faq_a1">Most restorations are completed within 24 to 48 hours. Severe damage may take up to 72 hours for meticulous manual repair.</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-header">
+<h4 data-i18n="faq_q2">What if I am not satisfied with the result?</h4>
+</div>
+<div class="accordion-body">
+<p data-i18n="faq_a2">We offer unlimited revisions. We will work with you until you are completely satisfied with the restored photo.</p>
+</div>
+</div>
+<div class="accordion-item">
+<div class="accordion-header">
+<h4 data-i18n="faq_q3">Can extremely blurry photos be fixed?</h4>
+</div>
+<div class="accordion-body">
+<p data-i18n="faq_a3">Yes, we use advanced AI upscaling and facial enhancement algorithms to restore lost details in blurry photographs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="privacy-notice" id="privacy">
+<div class="privacy-card">
+<div class="privacy-icon">🔒</div>
+<h3 data-i18n="privacy_title">100% Privacy &amp; Security Guarantee</h3>
+<p data-i18n="privacy_desc">Your memories are strictly confidential. We guarantee absolute privacy. Photos are never shared, published, or used for training without explicit consent. All files are permanently wiped from our secure servers 30 days after project completion.</p>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-content">
+<div class="footer-brand">
+<h2 data-i18n="index_h2_1">UPHOTO</h2>
+<p data-i18n="footer_slogan">Preserving history, one pixel at a time.</p>
+</div>
+<div class="footer-links">
+<a data-i18n="footer_privacy" href="privacy.html">Privacy Policy</a>
+<a data-i18n="footer_terms" href="terms.html">Terms of Service</a>
+<a data-i18n="footer_contact" href="mailto:abiao@gmail.com">Contact Us</a>
+<div class="social-icons">
+<a aria-label="Instagram" class="social-icon" href="https://instagram.com/your_account" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+<a aria-label="X (Twitter)" class="social-icon" href="https://twitter.com/your_account" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+</a>
+<a aria-label="Facebook" class="social-icon" href="https://facebook.com/your_account" target="_blank">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p data-i18n="index_p_2">© 2026 UPHOTO. All rights reserved.</p>
+</div>
+</footer>
+<!-- New Upload Wizard (Fullscreen) -->
+<div class="modal fullscreen-modal" id="upload-wizard">
+<div class="wizard-container">
+<span class="close-wizard">×</span>
+<div class="wizard-progress">
+<div class="step active" data-i18n="index_div_27" data-step="1"><span class="step-num">1</span> <span data-i18n="wiz_step1">Upload</span></div>
+<div class="step" data-i18n="index_div_28" data-step="2"><span class="step-num">2</span> <span data-i18n="wiz_step2">Details</span></div>
+<div class="step" data-i18n="index_div_29" data-step="3"><span class="step-num">3</span> <span data-i18n="wiz_step3">Service</span></div>
+<div class="step" data-i18n="index_div_30" data-step="4"><span class="step-num">4</span> <span data-i18n="wiz_step4">Checkout</span></div>
+</div>
+<div class="wizard-step active" id="step-1">
+<h2 data-i18n="wiz_title1">Upload Your Photo</h2>
+<p class="modal-subtitle" data-i18n="wiz_desc1">Digital Delivery Only. Please review our guidelines for the best restoration results.</p>
+<div class="guidelines-grid">
+<div class="guideline-card good">
+<div class="guideline-icon" data-i18n="index_div_31">✔️</div>
+<h4 data-i18n="guide_good_title">Recommended</h4>
+<ul data-i18n="guide_good_list">
+<li data-i18n="index_li_17">Flatbed scans (300dpi+)</li>
+<li data-i18n="index_li_18">Clear phone photos in natural light</li>
+<li data-i18n="index_li_19">No glare or reflections</li>
+</ul>
+</div>
+<div class="guideline-card bad">
+<div class="guideline-icon">❌</div>
+<h4 data-i18n="guide_bad_title">Unrepairable</h4>
+<ul data-i18n="guide_bad_list">
+<li data-i18n="index_li_20">Faces completely washed out by flash</li>
+<li data-i18n="index_li_21">Tiny, highly compressed thumbnails</li>
+<li data-i18n="index_li_22">Essential facial features completely torn off</li>
+<li data-i18n="index_li_23">Severe glass reflections hiding the subject</li>
+</ul>
+</div>
+</div>
+<div class="upload-area" id="drop-zone">
+<div class="upload-icon" data-i18n="index_div_32">☁️</div>
+<p data-i18n="upload_drag">Drag &amp; Drop your photo here</p>
+<span data-i18n="upload_or">or</span><br/>
+<button class="cta-button" data-i18n="upload_browse" id="browse-btn">Browse Files</button>
+<input accept="image/*" hidden="" id="file-input" type="file"/>
+</div>
+</div>
+<div class="wizard-step" id="step-2">
+<h2 data-i18n="wiz_title2">Review &amp; Instructions</h2>
+<div class="cropper-wrapper">
+<div class="preview-container">
+<img alt="Your uploaded photo" id="image-preview" loading="lazy" src=""/>
+</div>
+<div class="cropper-toolbar">
+<button class="tool-btn" id="crop-rotate-left" title="Rotate Left">↺</button>
+<button class="tool-btn" id="crop-rotate-right" title="Rotate Right">↻</button>
+<button class="tool-btn" id="crop-reset" title="Reset">⟲</button>
+</div>
+</div>
+<div class="notes-container">
+<label data-i18n="wiz_notes_label">Special Instructions for the Restorer (Optional)</label>
+<textarea data-i18n-placeholder="wiz_notes_placeholder" id="user-notes" placeholder="e.g. Please make sure my grandfather's uniform is olive green, or focus mostly on the tear across the face." rows="4"></textarea>
+</div>
+<div class="multi-upload-bar">
+<p data-i18n="upload_more_slots">Upload up to 10 photos</p>
+<div class="thumbnails-container" id="cart-thumbnails">
+<!-- Thumbs will be dynamically added here -->
+<div class="thumb-slot add-new" id="btn-add-more" title="Add Another Photo">+</div>
+</div>
+</div>
+<div class="wizard-actions">
+<button class="secondary-button prev-step" data-i18n="btn_back">Back</button>
+<button class="cta-button next-step" data-i18n="btn_next">Next Step</button>
+</div>
+</div>
+<div class="wizard-step" id="step-3">
+<h2 data-i18n="cart_title">Order Details &amp; Quotes</h2>
+<div class="cart-header" data-i18n="index_div_33">
+<span class="col-photo" data-i18n="cart_photo">Photo</span>
+<span class="col-tier" data-i18n="cart_tier">Tier</span>
+<span class="col-price" data-i18n="cart_price">Price</span>
+<span class="col-action" data-i18n="cart_action">Action</span>
+</div>
+<div class="cart-list" id="cart-items-container"></div>
+<div class="cart-summary-box">
+<div class="summary-row" data-i18n="index_div_34"><span data-i18n="cart_subtotal">Subtotal:</span> <span data-i18n="index_span_8" id="cart-subtotal">$0</span></div>
+<div class="summary-row discount" data-i18n="index_div_35"><span data-i18n="cart_discount">Multi-Photo Discount:</span> <span data-i18n="index_span_9" id="cart-discount-amt">-$0</span></div>
+<div class="summary-row total" data-i18n="index_div_36"><span data-i18n="cart_total">Final Total:</span> <span class="highlight price" data-i18n="index_span_10" id="cart-final-total">$0</span></div>
+<div class="discount-banner" data-i18n="cart_savings_0" id="discount-banner">Add more photos to unlock up to 50% discount!</div>
+</div>
+<div class="wizard-actions">
+<button class="secondary-button prev-step" data-i18n="btn_back">Back</button>
+<button class="cta-button next-step" data-i18n="btn_continue_checkout" id="btn-to-checkout">Continue to Checkout</button>
+</div>
+</div>
+<div class="wizard-step" id="step-4">
+<h2 data-i18n="wiz_title4">Order Summary</h2>
+<div class="order-summary">
+<div class="summary-row" data-i18n="index_div_37">
+<span data-i18n="summary_tier">Restoration Tier:</span>
+<span class="highlight" data-i18n="index_span_11" id="summary-tier-name">Medium Damage</span>
+</div>
+<div class="summary-row" data-i18n="index_div_38">
+<span data-i18n="summary_total">Total Price:</span>
+<span class="highlight price" data-i18n="index_span_12" id="summary-price">$39</span>
+</div>
+</div>
+<div class="email-capture-section">
+<label data-i18n="email_label" for="customer-email">Where should we send your restored photo?</label>
+<input class="email-input" id="customer-email" placeholder="you@example.com" required="" type="email"/>
+<p class="email-error" data-i18n="email_error" id="email-error" style="display:none; color: #ff6b6b; font-size: 0.85rem; margin-top: 5px;">Please enter a valid email address.</p>
+</div>
+<div class="paypal-wrapper" id="paypal-button-container-wizard">
+<!-- PayPal buttons will render here -->
+<p class="paypal-placeholder" data-i18n="index_p_3">PayPal integration ready for API keys.</p>
+</div>
+<div class="wizard-actions">
+<button class="secondary-button prev-step" data-i18n="btn_back">Back</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="reviews_data.js"></script>
+<script src="i18n.js?v=21"></script>
+<script src="script.js?v=16"></script>
+
+
+</div>
+
+

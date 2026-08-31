@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UPHOTO | Global Client Stories</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Noto+Serif+SC:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css?v=7" rel="stylesheet"/>
+</head>
+<body class="map-theme">
+<header class="navbar">
+<div class="logo" data-i18n="reviews_div_2">UPHOTO</div>
+<nav class="nav-links">
+<a data-i18n="nav_process" href="index.html#process">Process</a>
+<a data-i18n="nav_pricing" href="index.html#pricing">Pricing</a>
+<a class="active" data-i18n="nav_reviews" href="reviews.html">Client Stories</a>
+</nav>
+<div class="nav-actions">
+<select class="lang-switcher" id="lang-switcher">
+<option value="en">English</option>
+<option value="zh-CN">简体中文</option>
+<option value="zh-TW">繁體中文</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+<option value="de">Deutsch</option>
+<option value="fr">Français</option>
+<option value="ru">Русский</option>
+</select>
+<a class="cta-button" data-i18n="reviews_a_1" href="index.html#upload">Order Now</a>
+</div>
+</header>
+<main class="map-container">
+<!-- Interactive Map -->
+<div class="map-wrapper" id="map-wrapper">
+<img alt="World Map" class="world-map-svg" src="assets/world-map.svg"/>
+<div id="map-pins-container"></div>
+<div class="map-title-overlay">
+<h1 class="section-title" data-i18n="reviews_title">Global Stories</h1>
+<p class="pricing-subtitle" data-i18n="reviews_subtitle">Trusted by families worldwide.</p>
+</div>
+</div>
+<!-- Glassmorphism Side Panel -->
+<div class="side-panel" id="side-panel">
+<button class="close-panel" id="close-panel">×</button>
+<div class="panel-content">
+<div class="panel-images">
+<div class="panel-img after-img" id="panel-after"></div>
+<div class="panel-img before-img" id="panel-before"></div>
+<div class="panel-img-label" data-i18n="reviews_div_3">Hover to view original</div>
+</div>
+<div class="panel-text">
+<div class="panel-stars" id="panel-stars"></div>
+<div class="panel-quote" id="panel-quote"></div>
+<div class="panel-meta">
+<span class="panel-name" id="panel-name"></span>
+<span class="panel-date" id="panel-date"></span>
+<div class="panel-verified" data-i18n="reviews_div_4"><span class="verified-icon">✔</span> <span data-i18n="review_verified">Verified Client</span></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script src="reviews.js?v=8"></script>
+
+<script src="i18n.js?v=23"></script>
+</body>
+</html>
