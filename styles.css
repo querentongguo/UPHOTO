@@ -1670,16 +1670,35 @@ footer {
 }
 
 /* Wizard UI Improvements */
+
 .step-1-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
 }
+.step-1-layout .guidelines-grid {
+    grid-column: 1; /* Force guidelines to the left */
+    grid-row: 1;
+}
+.step-1-layout .upload-area {
+    grid-column: 2; /* Force upload box to the right */
+    grid-row: 1;
+}
 @media (max-width: 768px) {
     .step-1-layout {
         grid-template-columns: 1fr;
     }
+    .step-1-layout .guidelines-grid {
+        grid-column: 1;
+        grid-row: 1; /* On mobile, guidelines on top */
+    }
+    .step-1-layout .upload-area {
+        grid-column: 1;
+        grid-row: 2; /* On mobile, upload box below */
+    }
+}
+
 }
 .wizard-container {
     max-width: 900px; /* Make it slightly wider */
