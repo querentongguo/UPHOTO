@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             amount: {
                                 value: finalTotalUSD.toFixed(2)
                             },
-                            description: `UPHOTO Restoration Service (${cartItems.length} photos)`
+                            description: `BIGBROSTUDIO Restoration Service (${cartItems.length} photos)`
                         }]
                     });
                 },
@@ -855,13 +855,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         cartItems = [];
                         renderCart();
                         
-                        alert(`✅ Payment Successful!
-
-Your Transaction ID is: ${transactionId}
-
-Since this is a secure checkout, please EMAIL your photos to orders@uphoto-studio.com and include your Transaction ID in the email subject.
-
-We will begin restoration immediately upon receiving your email.`);
+                        window.location.href = "success.html?txid=" + transactionId;
                     });
                 },
                 onError: function(err) {
