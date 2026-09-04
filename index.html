@@ -2,6 +2,11 @@
 
 <html lang="en">
 <head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title data-i18n="title">BIGBROSTUDIO | Premium Old Photo Restoration</title>
@@ -309,12 +314,64 @@
 <div class="preview-container">
 <img alt="Your uploaded photo" id="image-preview" loading="lazy" src=""/>
 </div>
+
+        <div class="style-selector-container" style="margin-top: 20px; text-align: center;">
+            <h3 style="margin-bottom: 15px; color: var(--text-color);">Choose Your Art Style</h3>
+            <div class="style-options" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <label class="style-card" style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 10px; background: rgba(255,255,255,0.05);">
+                    <input type="radio" name="art_style" value="Royal Renaissance" checked style="display:none;">
+                    <div style="font-size: 24px; margin-bottom: 5px;">👑</div>
+                    <div>Royal Renaissance</div>
+                </label>
+                <label class="style-card" style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 10px; background: rgba(255,255,255,0.05);">
+                    <input type="radio" name="art_style" value="Disney Cartoon" style="display:none;">
+                    <div style="font-size: 24px; margin-bottom: 5px;">✨</div>
+                    <div>Disney Cartoon</div>
+                </label>
+                <label class="style-card" style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 10px; background: rgba(255,255,255,0.05);">
+                    <input type="radio" name="art_style" value="Classic Watercolor" style="display:none;">
+                    <div style="font-size: 24px; margin-bottom: 5px;">🎨</div>
+                    <div>Classic Watercolor</div>
+                </label>
+            </div>
+            <style>
+                .style-card input:checked + div + div { color: var(--primary-color); font-weight: bold; }
+                .style-card:has(input:checked) { border-color: var(--primary-color) !important; background: rgba(212, 175, 55, 0.1) !important; }
+            </style>
+        </div>
+
 <div class="cropper-toolbar">
 <button class="tool-btn" id="crop-rotate-left" title="Rotate Left">↺</button>
 <button class="tool-btn" id="crop-rotate-right" title="Rotate Right">↻</button>
 <button class="tool-btn" id="crop-reset" title="Reset">⟲</button>
 </div>
 </div>
+
+    <div class="style-selector-container" style="margin-top: 20px; text-align: center;">
+        <h3 data-i18n="wiz_style_title" style="margin-bottom: 15px; color: var(--text-color);">Choose Your Art Style</h3>
+        <div class="style-options" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <label class="style-card" style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 10px; background: rgba(255,255,255,0.05);">
+                <input type="radio" name="art_style" value="Royal Renaissance" checked style="display:none;">
+                <div style="font-size: 24px; margin-bottom: 5px;">👑</div>
+                <div data-i18n="style_royal">Royal Renaissance</div>
+            </label>
+            <label class="style-card" style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 10px; background: rgba(255,255,255,0.05);">
+                <input type="radio" name="art_style" value="Disney Cartoon" style="display:none;">
+                <div style="font-size: 24px; margin-bottom: 5px;">✨</div>
+                <div data-i18n="style_disney">Disney Cartoon</div>
+            </label>
+            <label class="style-card" style="cursor: pointer; border: 2px solid transparent; border-radius: 8px; padding: 10px; background: rgba(255,255,255,0.05);">
+                <input type="radio" name="art_style" value="Classic Watercolor" style="display:none;">
+                <div style="font-size: 24px; margin-bottom: 5px;">🎨</div>
+                <div data-i18n="style_watercolor">Classic Watercolor</div>
+            </label>
+        </div>
+        <style>
+            .style-card input:checked + div + div { color: var(--primary-color); font-weight: bold; }
+            .style-card:has(input:checked) { border-color: var(--primary-color) !important; background: rgba(212, 175, 55, 0.1) !important; }
+        </style>
+    </div>
+
 <div class="multi-upload-bar">
 <p data-i18n="upload_more_slots">Upload up to 10 photos</p>
 <div class="thumbnails-container" id="cart-thumbnails">

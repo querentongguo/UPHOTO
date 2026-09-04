@@ -528,6 +528,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert(window.t("cart_empty"));
                 return;
             }
+            
+            if (currentStep === 2) {
+                const styleInput = document.querySelector('input[name="art_style"]:checked');
+                if (styleInput && currentEditIndex >= 0) {
+                    cartItems[currentEditIndex].style = styleInput.value;
+                }
+            }
             if (currentStep < 4) {
                 currentStep++;
                 updateWizardView();
@@ -618,6 +625,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const item = cartItems[index];
         
         imagePreview.src = item.dataUrl;
+
+        if (item.style) {
+            const radio = document.querySelector(`input[name="art_style"][value="${item.style}"]`);
+            if (radio) radio.checked = true;
+        } else {
+            document.querySelector('input[name="art_style"][value="Royal Renaissance"]').checked = true;
+        }
+
         document.getElementById('user-notes').value = item.notes;
         
         if (cropper) {
@@ -843,7 +858,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             amount: {
                                 value: finalTotalUSD.toFixed(2)
                             },
-                            description: `BIGBROSTUDIO Restoration Service (${cartItems.length} photos)`
+                            description: `BIGBROSTUDIO Pet Art: ${cartItems.map(i => i.style).join(', ')}`
                         }]
                     });
                 },
