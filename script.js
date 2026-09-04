@@ -448,10 +448,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentEditIndex = -1;
     let cropper = null;
 
-    const TIER_PRICES = {
-        light: 19,
-        medium: 39,
-        severe: 79
+    const PACKAGE_PRICES = {
+        standard: 9.99,
+        social: 12.99,
+        allinone: 18.99,
+        commercial: 29.99
+    };
+    const SPEED_PRICES = {
+        d7: 0,
+        h48: 1.99,
+        h24: 2.99,
+        h12: 6.99
     };
 
     window.t = function(key, params={}) {
@@ -463,7 +470,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return text;
     };
 
-    function getBasePrice(tier) {
+    function getBasePrice(pkg, speed) {
+        return (PACKAGE_PRICES[pkg] || 9.99) + (SPEED_PRICES[speed] || 0);
+    }
+    function getBasePriceOld(tier) {
         return TIER_PRICES[tier] || 39;
     }
 
