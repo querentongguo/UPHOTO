@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Your Order | BIGBROSTUDIO</title>
+    <title>开始定制 | BIGBROSTUDIO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -25,41 +25,41 @@
             <div class="order-box" id="upload-wizard">
                 <!-- Wizard Progress -->
                 <div class="wizard-progress">
-                    <div class="step active" data-step="1">1. Photo</div>
-                    <div class="step" data-step="2">2. Style</div>
-                    <div class="step" data-step="3">3. Cart</div>
-                    <div class="step" data-step="4">4. Pay</div>
+                    <div class="step active" data-step="1">1. 上传照片</div>
+                    <div class="step" data-step="2">2. 定制选项</div>
+                    <div class="step" data-step="3">3. 结账</div>
+                    <div class="step" data-step="4">4. 付款</div>
                 </div>
 
                 <!-- STEP 1: UPLOAD -->
                 <div class="wizard-step active" id="step-1">
-                    <h2>Upload Your Pet's Photo</h2>
-                    <p class="subtitle">Drop a clear photo of your pet here or click to browse.</p>
+                    <h2>上传爱宠照片</h2>
+                    <p class="subtitle">将清晰的照片拖拽到此处，或点击浏览。</p>
                     
                     <div class="drop-zone" id="drop-zone">
                         <div class="drop-icon">📸</div>
-                        <p>Drag & Drop your photo here</p>
-                        <p class="or">or</p>
-                        <button id="browse-btn" class="btn-secondary">Browse Files</button>
+                        <p>拖拽照片到此处</p>
+                        <p class="or">或</p>
+                        <button id="browse-btn" class="btn-secondary">浏览文件</button>
                         <input type="file" id="file-input" accept="image/jpeg, image/png, image/webp" style="display: none;">
                     </div>
                     
                     <div class="guidelines">
                         <div class="guide-grid">
                             <div class="guide-good">
-                                <h5>✅ What works best:</h5>
+                                <h5>✅ 什么样的照片最好：</h5>
                                 <ul>
-                                    <li>Clear, well-lit photos</li>
-                                    <li>Pet's face is fully visible</li>
-                                    <li>Taken at eye level</li>
+                                    <li>清晰、光线充足的照片</li>
+                                    <li>宠物的脸部完整可见</li>
+                                    <li>与宠物平视角度拍摄</li>
                                 </ul>
                             </div>
                             <div class="guide-bad">
-                                <h5>❌ What to avoid:</h5>
+                                <h5>❌ 避免以下情况：</h5>
                                 <ul>
-                                    <li>Blurry or dark photos</li>
-                                    <li>Ears or head cut off</li>
-                                    <li>Pet is too far away</li>
+                                    <li>模糊或昏暗的照片</li>
+                                    <li>耳朵或头部被裁切</li>
+                                    <li>宠物距离镜头太远</li>
                                 </ul>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
 
                 <!-- STEP 2: EDIT & STYLE -->
                 <div class="wizard-step" id="step-2">
-                    <h2>Choose Your Art Style</h2>
+                    <h2>选择画风主题</h2>
                     
                     <div class="preview-container">
                         <img id="image-preview" src="" alt="Preview">
@@ -76,37 +76,37 @@
 
                     <div class="style-grid">
                         <label class="style-card">
-                            <input type="radio" name="art_style" value="Royal Renaissance" checked>
-                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=300&q=80" alt="Royal">
-                            <div class="style-name">Royal</div>
+                            <input type="radio" name="art_style" value="皇家贵族 Renaissance" checked>
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=300&q=80" alt="皇家贵族">
+                            <div class="style-name">皇家贵族</div>
                         </label>
                         <label class="style-card">
-                            <input type="radio" name="art_style" value="Disney Cartoon">
-                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=300&q=80" alt="Cartoon">
-                            <div class="style-name">Cartoon</div>
+                            <input type="radio" name="art_style" value="Disney 卡通动漫">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=300&q=80" alt="卡通动漫">
+                            <div class="style-name">卡通动漫</div>
                         </label>
                         <label class="style-card">
-                            <input type="radio" name="art_style" value="Classic Watercolor">
-                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" alt="Watercolor">
-                            <div class="style-name">Watercolor</div>
+                            <input type="radio" name="art_style" value="Classic 唯美水彩">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" alt="唯美水彩">
+                            <div class="style-name">唯美水彩</div>
                         </label>
                     </div>
                     
                     <div class="wizard-actions">
-                        <button class="btn-outline prev-step">Back</button>
-                        <button class="btn-primary next-step">Save & Next</button>
+                        <button class="btn-outline prev-step">返回上一步</button>
+                        <button class="btn-primary next-step">保存并下一步</button>
                     </div>
                 </div>
 
                 <!-- STEP 3: CART -->
                 <div class="wizard-step" id="step-3">
-                    <h2>Review Your Order</h2>
+                    <h2>核对您的订单</h2>
                     <div class="cart-container">
                         <table class="cart-table">
                             <thead>
                                 <tr>
-                                    <th>Item</th>
-                                    <th>Price</th>
+                                    <th>商品明细</th>
+                                    <th>价格</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -114,26 +114,26 @@
                         </table>
                         <div class="cart-summary">
                             <div class="cart-total-row">
-                                <span>Total:</span>
+                                <span>总计：</span>
                                 <span id="cart-total">$0.00</span>
                             </div>
                         </div>
                     </div>
                     <div class="wizard-actions">
-                        <button class="btn-outline" onclick="document.getElementById('file-input').click()">Add Another Pet</button>
-                        <button class="btn-primary next-step">Checkout</button>
+                        <button class="btn-outline" onclick="document.getElementById('file-input').click()">再添加一只宠物</button>
+                        <button class="btn-primary next-step">安全结账</button>
                     </div>
                 </div>
 
                 <!-- STEP 4: PAYPAL -->
                 <div class="wizard-step" id="step-4">
-                    <h2>Secure Payment</h2>
-                    <p class="subtitle">You are paying for a custom digital pet portrait service.</p>
+                    <h2>安全支付</h2>
+                    <p class="subtitle">您正在购买个性化数码宠物画像定制服务。</p>
                     <div class="payment-container">
                         <div id="paypal-button-container"></div>
                     </div>
                     <div class="wizard-actions">
-                        <button class="btn-outline prev-step">Back to Cart</button>
+                        <button class="btn-outline prev-step">返回购物车</button>
                     </div>
                 </div>
 
@@ -143,7 +143,7 @@
 
     <footer class="site-footer">
         <div class="container" style="text-align: center; padding: 40px 0; color: #666;">
-            <p>&copy; 2026 BIGBROSTUDIO. All rights reserved.</p>
+            <p>&copy; 2026 BIGBROSTUDIO. 保留所有权利。</p>
         </div>
     </footer>
 
