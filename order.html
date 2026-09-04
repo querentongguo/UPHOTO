@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your Order | BIGBROSTUDIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="order.css">
+    <!-- PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AT9bM0e8mHh6d_x830mU_YVvF4WcR-y47iL5XQnXZuF9Q2oJ2TzP6xGz6dE9Xp8M0e8mHh6d_x830mU_Y&currency=USD"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container" style="text-align: center; padding: 20px 0;">
+            <a href="index.html" style="text-decoration: none;">
+                <span class="logo-text" style="font-size: 2rem; font-weight: 900; color: #2D3436; letter-spacing: -1px;">BIGBROSTUDIO</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="order-section">
+        <div class="container">
+            <div class="order-box" id="upload-wizard">
+                <!-- Wizard Progress -->
+                <div class="wizard-progress">
+                    <div class="step active" data-step="1">1. Photo</div>
+                    <div class="step" data-step="2">2. Style</div>
+                    <div class="step" data-step="3">3. Cart</div>
+                    <div class="step" data-step="4">4. Pay</div>
+                </div>
+
+                <!-- STEP 1: UPLOAD -->
+                <div class="wizard-step active" id="step-1">
+                    <h2>Upload Your Pet's Photo</h2>
+                    <p class="subtitle">Drop a clear photo of your pet here or click to browse.</p>
+                    
+                    <div class="drop-zone" id="drop-zone">
+                        <div class="drop-icon">📸</div>
+                        <p>Drag & Drop your photo here</p>
+                        <p class="or">or</p>
+                        <button id="browse-btn" class="btn-secondary">Browse Files</button>
+                        <input type="file" id="file-input" accept="image/jpeg, image/png, image/webp" style="display: none;">
+                    </div>
+                    
+                    <div class="guidelines">
+                        <div class="guide-grid">
+                            <div class="guide-good">
+                                <h5>✅ What works best:</h5>
+                                <ul>
+                                    <li>Clear, well-lit photos</li>
+                                    <li>Pet's face is fully visible</li>
+                                    <li>Taken at eye level</li>
+                                </ul>
+                            </div>
+                            <div class="guide-bad">
+                                <h5>❌ What to avoid:</h5>
+                                <ul>
+                                    <li>Blurry or dark photos</li>
+                                    <li>Ears or head cut off</li>
+                                    <li>Pet is too far away</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: EDIT & STYLE -->
+                <div class="wizard-step" id="step-2">
+                    <h2>Choose Your Art Style</h2>
+                    
+                    <div class="preview-container">
+                        <img id="image-preview" src="" alt="Preview">
+                    </div>
+
+                    <div class="style-grid">
+                        <label class="style-card">
+                            <input type="radio" name="art_style" value="Royal Renaissance" checked>
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=300&q=80" alt="Royal">
+                            <div class="style-name">Royal</div>
+                        </label>
+                        <label class="style-card">
+                            <input type="radio" name="art_style" value="Disney Cartoon">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=300&q=80" alt="Cartoon">
+                            <div class="style-name">Cartoon</div>
+                        </label>
+                        <label class="style-card">
+                            <input type="radio" name="art_style" value="Classic Watercolor">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" alt="Watercolor">
+                            <div class="style-name">Watercolor</div>
+                        </label>
+                    </div>
+                    
+                    <div class="wizard-actions">
+                        <button class="btn-outline prev-step">Back</button>
+                        <button class="btn-primary next-step">Save & Next</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: CART -->
+                <div class="wizard-step" id="step-3">
+                    <h2>Review Your Order</h2>
+                    <div class="cart-container">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-table-body"></tbody>
+                        </table>
+                        <div class="cart-summary">
+                            <div class="cart-total-row">
+                                <span>Total:</span>
+                                <span id="cart-total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wizard-actions">
+                        <button class="btn-outline" onclick="document.getElementById('file-input').click()">Add Another Pet</button>
+                        <button class="btn-primary next-step">Checkout</button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: PAYPAL -->
+                <div class="wizard-step" id="step-4">
+                    <h2>Secure Payment</h2>
+                    <p class="subtitle">You are paying for a custom digital pet portrait service.</p>
+                    <div class="payment-container">
+                        <div id="paypal-button-container"></div>
+                    </div>
+                    <div class="wizard-actions">
+                        <button class="btn-outline prev-step">Back to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container" style="text-align: center; padding: 40px 0; color: #666;">
+            <p>&copy; 2026 BIGBROSTUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+</body>
+</html>
